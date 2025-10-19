@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ztsohg | Info Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="theme-switcher">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">ztsohg</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Hello, I'm ztsohg</h1>
+            <p>Roblox Developer focusing on UI Design and a little scripting.</p>
+            <a href="#contact" class="btn">Contact</a>
+        </div>
+    </section>
+
+    <section class="container" id="about">
+        <div class="info-card">
+            <div class="profile-img">
+                <img src="https://i.pinimg.com/474x/02/03/9c/02039cf2cfc8a3208007a04b6fa2a6c1.jpg" alt="ztsohg">
+            </div>
+            <div class="profile-info">
+                <h2>About Me</h2>
+                <p>Hello! I'm a Roblox developer with a focus on creating engaging UI designs and implementing functional scripting elements.</p>
+                <p>My approach combines creative design with technical implementation to create immersive experiences within the Roblox platform.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>alwaysneverwin@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container projects-section" id="projects">
+        <h2 class="section-title">Currently Working On</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <i class="fas fa-gamepad"></i>
+                <h3>Cavernspire</h3>
+                <p>Complete rework of a game "Ore Mining Incremental"</p>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-gamepad"></i>
+                <h3>Remnants</h3>
+                <p>Psychological horror game, taking place in an unknown mansion after memory loss.</p>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-code"></i>
+                <h3>Learning coding languages</h3>
+                <p>Upgrading Lua skills, Learning Python, CSS, Html</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container skills-section" id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <i class="fas fa-palette"></i>
+                <h3>UI Design</h3>
+                <p>Roblox UI Designs</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>Coding</h3>
+                <p>Not perfect Lua | Learning: Python, CSS, Html</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Contact info</h2>
+            <p>Feel free to reach out for collaborations or just a friendly hello</p>
+            
+            <div class="social-links">
+                <a href="https://youtube.com/@ztsohG" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/TheGhostyX" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" id="discord-link"><i class="fab fa-discord"></i></a>
+            </div>
+            
+            <p class="copyright">&copy; 2025 ztsohg. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const icon = themeSwitcher.querySelector('i');
+        
+        themeSwitcher.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            
+            if (document.body.classList.contains('dark-theme')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        const discordLink = document.getElementById('discord-link');
+        
+        discordLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            navigator.clipboard.writeText('tshg')
+                .then(() => {
+                    const originalTitle = discordLink.getAttribute('title') || '';
+                    discordLink.setAttribute('title', 'Copied!');
+                    
+                    setTimeout(() => {
+                        discordLink.setAttribute('title', originalTitle);
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+        });
+    </script>
+</body>
+</html>
