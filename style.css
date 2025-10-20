@@ -328,7 +328,7 @@ header {
 
 /* Projects Section */
 .projects-section {
-    margin: 0;
+    margin: px 0;
 }
 
 .projects-container {
@@ -352,7 +352,7 @@ header {
 
 /* Skills Section */
 .skills-section {
-    margin: 0;
+    margin: px 0;
 }
 
 .section-title {
