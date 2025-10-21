@@ -263,19 +263,6 @@ header {
     transform: scale(1.03);
 }
 
-.profile-img::after {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: var(--gradient-3);
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0.1;
-}
-
 .profile-info {
     flex: 2;
     min-width: 300px;
@@ -348,6 +335,31 @@ header {
     transition: all 0.3s;
     position: relative;
     overflow: hidden;
+}
+
+/* Project Meta Info */
+.project-meta {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(139, 0, 0, 0.2);
+}
+
+.developers-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: rgba(139, 0, 0, 0.1);
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    border: 1px solid rgba(139, 0, 0, 0.2);
+}
+
+.developers-count::before {
+    content: '👥';
+    font-size: 0.9rem;
 }
 
 /* Skills Section */
@@ -547,4 +559,223 @@ footer p {
 
 .project-card:nth-child(3) {
     animation-delay: 0.4s;
+}
+
+/* About Me Detailed Page Styles */
+.about-me-detailed .info-card {
+    margin: 30px 0;
+}
+
+.about-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgba(139, 0, 0, 0.1);
+}
+
+.about-section:last-of-type {
+    border-bottom: none;
+}
+
+.about-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-section h2 i {
+    color: var(--secondary-color);
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: rgba(139, 0, 0, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.info-item strong {
+    color: var(--primary-color);
+}
+
+/* Music Grid */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.music-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(139, 0, 0, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.music-item:hover {
+    transform: translateY(-2px);
+    background: rgba(139, 0, 0, 0.1);
+}
+
+.music-item i {
+    color: var(--secondary-color);
+}
+
+/* Games Grid */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.game-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(139, 0, 0, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.game-item:hover {
+    transform: translateY(-2px);
+    background: rgba(139, 0, 0, 0.1);
+}
+
+.game-item i {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.game-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-item strong {
+    color: var(--primary-color);
+}
+
+.game-item span {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Languages Grid */
+.languages-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.language-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(139, 0, 0, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.language-item:hover {
+    transform: translateY(-2px);
+    background: rgba(139, 0, 0, 0.1);
+}
+
+.language-item i {
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
+
+.language-item div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.language-item strong {
+    color: var(--primary-color);
+}
+
+.skill-level {
+    width: 100%;
+    height: 6px;
+    background: rgba(139, 0, 0, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skill-bar {
+    height: 100%;
+    background: var(--gradient-2);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Interests Grid */
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.interest-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 15px;
+    background: rgba(139, 0, 0, 0.05);
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.interest-item:hover {
+    transform: translateY(-2px);
+    background: rgba(139, 0, 0, 0.1);
+}
+
+.interest-item i {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+/* Responsive Design for About Page */
+@media (max-width: 768px) {
+    .info-grid,
+    .music-grid,
+    .games-grid,
+    .interests-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .language-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
 }
