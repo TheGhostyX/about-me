@@ -48,7 +48,7 @@
         <div class="info-card">
             <div class="profile-img">
                 <div class="avatar-wrap">
-                    <img src="https://i.pinimg.com/474x/02/03/9c/02039cf2cfc8a3208007a04b6fa2a6c1.jpg" alt="ztsohg">
+                    <img src="Notion Studios Logo.png" alt="Notion Studios">
                 </div>
             </div>
             <div class="profile-info">
@@ -201,15 +201,15 @@
     });
 
     document.getElementById('discord-link').addEventListener('click', e => {
-        e.preventDefault();
-        navigator.clipboard.writeText('tshg').then(() => {
-            const link = e.currentTarget;
-            const orig = link.innerHTML;
-            link.innerHTML = '<i class="fas fa-check"></i>';
-            setTimeout(() => link.innerHTML = orig, 2000);
-        });
+    e.preventDefault();
+    navigator.clipboard.writeText('tshg').then(() => {
+        const toast = document.getElementById('copied-toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
     });
+});
 </script>
 </body>
 </html>
+
 
