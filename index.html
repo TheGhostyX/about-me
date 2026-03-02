@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ztsohg</title>
+    <link rel="icon" type="image/png" href="Notion Studios Logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Background layers -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<canvas id="bg-canvas"></canvas>
 
 <div class="theme-toggle">
     <button id="theme-switcher"><i class="fas fa-moon"></i></button>
@@ -26,7 +33,6 @@
     </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
     <div class="container">
         <div class="hero-inner">
@@ -42,7 +48,6 @@
     <div class="hero-grid"></div>
 </section>
 
-<!-- ABOUT SNAP -->
 <section class="section" id="about">
     <div class="container">
         <div class="info-card">
@@ -66,7 +71,6 @@
     </div>
 </section>
 
-<!-- PROJECTS: CURRENT -->
 <section class="section" id="projects">
     <div class="container">
         <div class="section-header">
@@ -123,8 +127,7 @@
     </div>
 </section>
 
-<!-- PROJECTS: PAST -->
-<section class="section" style="padding-top: 0;">
+<section class="section" style="padding-top:0">
     <div class="container">
         <div class="section-header">
             <span class="section-label">// past</span>
@@ -145,7 +148,6 @@
     </div>
 </section>
 
-<!-- SKILLS -->
 <section class="section" id="skills">
     <div class="container">
         <div class="section-header">
@@ -167,7 +169,6 @@
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer id="contact">
     <div class="container">
         <div class="footer-inner">
@@ -176,7 +177,7 @@
             <div class="social-links">
                 <a href="https://youtube.com/@ztsohG" target="_blank"><i class="fab fa-youtube"></i></a>
                 <a href="https://github.com/ztsohg" target="_blank"><i class="fab fa-github"></i></a>
-                <span style="position:relative; display:inline-block;">
+                <span style="position:relative;display:inline-block;">
                     <a href="#" id="discord-link"><i class="fab fa-discord"></i></a>
                     <span class="copied-toast" id="copied-toast">Copied!</span>
                 </span>
@@ -187,6 +188,7 @@
 </footer>
 
 <script>
+    // Theme
     const switcher = document.getElementById('theme-switcher');
     const icon = switcher.querySelector('i');
     if (localStorage.getItem('theme') === 'light') {
@@ -200,17 +202,64 @@
         localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
 
+    // Discord copy
     document.getElementById('discord-link').addEventListener('click', e => {
-    e.preventDefault();
-    navigator.clipboard.writeText('tshg').then(() => {
-        const toast = document.getElementById('copied-toast');
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2000);
+        e.preventDefault();
+        navigator.clipboard.writeText('tshg').then(() => {
+            const toast = document.getElementById('copied-toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        });
     });
-});
+
+    // Particle canvas
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function randomBetween(a, b) { return a + Math.random() * (b - a); }
+
+    const COLORS = ['120,80,255', '0,229,255', '255,80,168'];
+
+    for (let i = 0; i < 55; i++) {
+        particles.push({
+            x: randomBetween(0, window.innerWidth),
+            y: randomBetween(0, window.innerHeight),
+            r: randomBetween(1, 2.5),
+            color: COLORS[Math.floor(Math.random() * COLORS.length)],
+            speedX: randomBetween(-0.15, 0.15),
+            speedY: randomBetween(-0.3, -0.08),
+            opacity: randomBetween(0.1, 0.5),
+            pulse: randomBetween(0, Math.PI * 2),
+            pulseSpeed: randomBetween(0.005, 0.015)
+        });
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            p.pulse += p.pulseSpeed;
+            const alpha = p.opacity * (0.6 + 0.4 * Math.sin(p.pulse));
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${p.color},${alpha})`;
+            ctx.fill();
+            p.x += p.speedX;
+            p.y += p.speedY;
+            if (p.y < -10) { p.y = canvas.height + 10; p.x = randomBetween(0, canvas.width); }
+            if (p.x < -10) p.x = canvas.width + 10;
+            if (p.x > canvas.width + 10) p.x = -10;
+        });
+        requestAnimationFrame(animate);
+    }
+    animate();
 </script>
 </body>
 </html>
-
-
-
