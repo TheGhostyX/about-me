@@ -343,6 +343,21 @@ footer p { color: var(--text-muted); font-size: 0.9rem; }
 }
 .copyright { font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-muted); opacity: 0.55; }
 
+.copied-toast {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    color: var(--accent2);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+.copied-toast.show { opacity: 1; }
+
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(22px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -355,3 +370,4 @@ footer p { color: var(--text-muted); font-size: 0.9rem; }
     .nav-links a { padding: 6px 9px; font-size: 0.78rem; }
     .projects-grid { grid-template-columns: 1fr; }
 }
+
