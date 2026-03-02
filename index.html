@@ -3,50 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ztsohg | Info Card</title>
+    <title>ztsohg</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="theme-toggle">
-        <button id="theme-switcher">
-            <i class="fas fa-moon"></i>
-        </button>
+
+<div class="theme-toggle">
+    <button id="theme-switcher"><i class="fas fa-moon"></i></button>
+</div>
+
+<header>
+    <div class="navbar">
+        <div class="logo">ztsohg</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about_me.html">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </div>
+</header>
 
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">ztsohg</div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about_me.html">About</a></li>
-                    <li><a href="index.html#projects">Projects</a></li>
-                    <li><a href="index.html#skills">Skills</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-            </nav>
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <span class="hero-eyebrow">Roblox Developer</span>
+            <h1>Hi, I'm<br><span class="name-grad">ztsohg</span></h1>
+            <p class="hero-desc">I craft engaging UI designs and beautiful Visual Effects for Roblox experiences that players remember.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-gamepad"></i> See Projects</a>
+                <a href="#contact" class="btn btn-ghost"><i class="fas fa-paper-plane"></i> Contact</a>
+            </div>
         </div>
-    </header>
+    </div>
+    <div class="hero-grid"></div>
+</section>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Hello, I'm ztsohg</h1>
-            <p>Roblox Developer focusing on UI Design and VFX.</p>
-            <a href="#contact" class="btn">Contact</a>
-        </div>
-    </section>
-
-    <section class="container" id="about">
+<!-- ABOUT SNAP -->
+<section class="section" id="about">
+    <div class="container">
         <div class="info-card">
             <div class="profile-img">
-                <img src="https://i.pinimg.com/474x/02/03/9c/02039cf2cfc8a3208007a04b6fa2a6c1.jpg" alt="ztsohg">
+                <div class="avatar-wrap">
+                    <img src="https://i.pinimg.com/474x/02/03/9c/02039cf2cfc8a3208007a04b6fa2a6c1.jpg" alt="ztsohg">
+                </div>
             </div>
             <div class="profile-info">
                 <h2>Shortly about me</h2>
-                <p>Hello! I'm a Roblox developer with a focus on creating engaging UI designs and making beautiful Visual Effects.</p>
-                <p>My approach combines creative design with technical implementation to create immersive experiences within the Roblox platform.</p>
-                
+                <p>I'm a Roblox developer focused on creating engaging UI designs and beautiful Visual Effects. I combine creative design with technical implementation to build immersive experiences.</p>
+                <p>Currently working on multiple projects ranging from horror games to incremental RNG mechanics. Always open to new collaborations.</p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -55,168 +63,149 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-        <section class="container projects-section" id="projects">
-        <h2 class="section-title">Currently Working On</h2>
-        <div class="projects-container">
+<!-- PROJECTS: CURRENT -->
+<section class="section" id="projects">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">// work</span>
+            <h2 class="section-title">Currently Working On</h2>
+        </div>
+        <div class="projects-grid">
             <div class="project-card">
-                <i class="fas fa-gamepad"></i>
+                <div class="project-icon"><i class="fas fa-layer-group"></i></div>
                 <h3>Card RNG</h3>
-                <p>An RNG game where you roll different Cards from various packs.</p>
-                <div class="project-meta">
-                    <span class="developers-count">Developers: 1</span>
-                </div>
-                <div class="project-meta">
-                    <span class="developers-role">My role: Lead Developer</span>
+                <p>An RNG game where you roll different cards from various packs.</p>
+                <div class="project-tags">
+                    <span class="tag">1 dev</span>
+                    <span class="tag role">Lead Dev</span>
                 </div>
             </div>
             <div class="project-card">
-                <i class="fas fa-gamepad"></i>
+                <div class="project-icon"><i class="fas fa-ghost"></i></div>
                 <h3>Remnants</h3>
-                <p>Psychological horror game, taking place in an unknown mansion after memory loss.</p>
-                <div class="project-meta">
-                    <span class="developers-count">Developers: 1</span>
-                </div>
-                <div class="project-meta">
-                    <span class="developers-role">My role: Lead Developer</span>
+                <p>Psychological horror game set in an unknown mansion after memory loss.</p>
+                <div class="project-tags">
+                    <span class="tag">1 dev</span>
+                    <span class="tag role">Lead Dev</span>
                 </div>
             </div>
             <div class="project-card">
-                <i class="fas fa-gamepad"></i>
+                <div class="project-icon"><i class="fas fa-book-open"></i></div>
                 <h3>Murino</h3>
-                <p>A Story game with multiple chapters inspired by The Mimic</p>
-                <div class="project-meta">
-                    <span class="developers-count">Developers: 2</span>
-                </div>
-                <div class="project-meta">
-                    <span class="developers-role">My role: Lead Developer</span>
+                <p>A story game with multiple chapters inspired by The Mimic.</p>
+                <div class="project-tags">
+                    <span class="tag">2 devs</span>
+                    <span class="tag role">Lead Dev</span>
                 </div>
             </div>
             <div class="project-card">
-                <i class="fas fa-gamepad"></i>
+                <div class="project-icon"><i class="fas fa-utensils"></i></div>
                 <h3>Culinaria</h3>
-                <p>A Cooking game inspired by The Forge, Fisch</p>
-                <div class="project-meta">
-                    <span class="developers-count">Developers: 10</span>
-                </div>
-                <div class="project-meta">
-                    <span class="developers-role">My role: [ Co-Owner ] UI + VFX Designer</span>
+                <p>A cooking game inspired by The Forge and Fisch.</p>
+                <div class="project-tags">
+                    <span class="tag">10 devs</span>
+                    <span class="tag role">Co-Owner · UI + VFX</span>
                 </div>
             </div>
             <div class="project-card">
-                <i class="fas fa-gamepad"></i>
+                <div class="project-icon"><i class="fas fa-industry"></i></div>
                 <h3>Kips's RNG Factory</h3>
-                <p>A mix of RNG, Tycoon and Incremental genres</p>
-                <div class="project-meta">
-                    <span class="developers-count">Developers: 3</span>
-                </div>
-                <div class="project-meta">
-                    <span class="developers-role">My role: UI + VFX Designer</span>
+                <p>A mix of RNG, Tycoon, and Incremental genres.</p>
+                <div class="project-tags">
+                    <span class="tag">3 devs</span>
+                    <span class="tag role">UI + VFX Designer</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="container projects-section" id="projects">
-        <h2 class="section-title">Games I've Worked On</h2>
-        <div class="projects-container">
+<!-- PROJECTS: PAST -->
+<section class="section" style="padding-top: 0;">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">// past</span>
+            <h2 class="section-title">Games I've Worked On</h2>
+        </div>
+        <div class="projects-grid">
             <div class="project-card">
-                <i class="fas fa-gamepad"></i>
+                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
                 <h3>Infinite Incremental</h3>
-                <p>An Incremental game made by Infinity_LightOfDark</p>
+                <p>An incremental game made by Infinity_LightOfDark.</p>
             </div>
-        </div>
-        <div class="projects-container">
             <div class="project-card">
-                <i class="fas fa-gamepad"></i>
+                <div class="project-icon"><i class="fas fa-mountain"></i></div>
                 <h3>Ore Mining Incremental</h3>
-                <p>An Ore Mining game made by Infinity_LightOfDark</p>
+                <p>An ore mining game made by Infinity_LightOfDark.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="container skills-section" id="skills">
-        <h2 class="section-title">My Skills</h2>
-        <div class="skills-container">
+<!-- SKILLS -->
+<section class="section" id="skills">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">// skills</span>
+            <h2 class="section-title">What I Do</h2>
+        </div>
+        <div class="skills-grid">
             <div class="skill-card">
-                <i class="fas fa-palette"></i>
+                <div class="skill-icon"><i class="fas fa-palette"></i></div>
                 <h3>UI Design + VFX</h3>
-                <p>Roblox UI Designs and VFX</p>
+                <p>Crafting polished Roblox UI and visual effects that enhance player immersion.</p>
             </div>
             <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h3>Coding</h3>
-                <p>Not perfect Lua | Learning: Python, CSS, Html</p>
+                <div class="skill-icon"><i class="fas fa-code"></i></div>
+                <h3>Scripting</h3>
+                <p>Lua for Roblox. Also learning Python, CSS, and HTML.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer id="contact">
-        <div class="container">
-            <h2>Contact info</h2>
-            <p>Feel free to reach out for collaborations or just a friendly hello</p>
-            
+<!-- FOOTER -->
+<footer id="contact">
+    <div class="container">
+        <div class="footer-inner">
+            <h2>Let's Connect</h2>
+            <p>Open for collaborations or just a hello.</p>
             <div class="social-links">
                 <a href="https://youtube.com/@ztsohG" target="_blank"><i class="fab fa-youtube"></i></a>
                 <a href="https://github.com/ztsohg" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="#" id="discord-link"><i class="fab fa-discord"></i></a>
             </div>
-            
-            <p class="copyright">&copy; 2025 ztsohg. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2025 ztsohg. All rights reserved.</p>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script>
-        const themeSwitcher = document.getElementById('theme-switcher');
-        const icon = themeSwitcher.querySelector('i');
-        
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.body.classList.add('dark-theme');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-        
-        themeSwitcher.addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-            
-            if (document.body.classList.contains('dark-theme')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'light');
-            }
-        });
+<script>
+    const switcher = document.getElementById('theme-switcher');
+    const icon = switcher.querySelector('i');
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-theme');
+        icon.classList.replace('fa-moon','fa-sun');
+    }
+    switcher.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        const isLight = document.body.classList.contains('light-theme');
+        icon.classList.replace(isLight ? 'fa-moon' : 'fa-sun', isLight ? 'fa-sun' : 'fa-moon');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
 
-        const discordLink = document.getElementById('discord-link');
-        
-        discordLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            navigator.clipboard.writeText('tshg')
-                .then(() => {
-                    const originalHTML = discordLink.innerHTML;
-                    discordLink.innerHTML = '<i class="fas fa-check"></i>';
-                    discordLink.style.background = 'var(--gradient-2)';
-                    
-                    setTimeout(() => {
-                        discordLink.innerHTML = originalHTML;
-                        discordLink.style.background = '';
-                    }, 2000);
-                })
-                .catch(err => {
-                    console.error('Failed to copy: ', err);
-                });
+    document.getElementById('discord-link').addEventListener('click', e => {
+        e.preventDefault();
+        navigator.clipboard.writeText('tshg').then(() => {
+            const link = e.currentTarget;
+            const orig = link.innerHTML;
+            link.innerHTML = '<i class="fas fa-check"></i>';
+            setTimeout(() => link.innerHTML = orig, 2000);
         });
-    </script>
+    });
+</script>
 </body>
-
 </html>
-
-
-
-
