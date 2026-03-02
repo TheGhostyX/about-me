@@ -152,15 +152,15 @@
     });
 
     document.getElementById('discord-link').addEventListener('click', e => {
-        e.preventDefault();
-        navigator.clipboard.writeText('tshg').then(() => {
-            const link = e.currentTarget;
-            const orig = link.innerHTML;
-            link.innerHTML = '<i class="fas fa-check"></i>';
-            setTimeout(() => link.innerHTML = orig, 2000);
-        });
+    e.preventDefault();
+    navigator.clipboard.writeText('tshg').then(() => {
+        const toast = document.getElementById('copied-toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
     });
+});
 </script>
 </body>
 </html>
+
 
